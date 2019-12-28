@@ -1,0 +1,74 @@
+****************************************************************************
+****************************************************************************
+
+1. Registi che hanno lavorato con Leonardo Di Caprio
+
+PREFIX : <http://www.semanticweb.org/friday/ontologies/cinema#>
+
+select ?director 
+  WHERE { ?director rdf:type :Regista; :ha_lavorato_con :LeonardoDiCaprio }
+
+****************************************************************************
+****************************************************************************
+
+2. Persone che hanno lavorato al film ShutterIsland
+
+PREFIX : <http://www.semanticweb.org/friday/ontologies/cinema#>
+
+select ?person 
+  WHERE { ?person :ha_lavorato_in :ShutterIsland }
+
+****************************************************************************
+****************************************************************************
+
+3. Film nei quali ha recitato Leonardo Di Caprio
+
+PREFIX : <http://www.semanticweb.org/friday/ontologies/cinema#>
+
+
+SELECT ?movie
+WHERE {
+  :LeonardoDiCaprio :ha_lavorato_in ?movie
+}
+
+****************************************************************************
+****************************************************************************
+
+4. Attori che non hanno lavorato insieme (senza ripetizioni)
+
+PREFIX  rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX  foaf:   <http://xmlns.com/foaf/0.1/> 
+PREFIX : <http://www.semanticweb.org/friday/ontologies/cinema#>
+
+SELECT ?s1 ?s2
+WHERE {
+   ?s1 rdf:type :Attore .
+   ?s2 rdf:type :Attore .
+   MINUS {
+      ?s1 :ha_lavorato_con ?s2 .
+   }.
+   filter (STR(?s1) < STR(?s2)) .
+
+}
+
+****************************************************************************
+****************************************************************************
+
+5. Attori che hanno lavorato insieme (senza ripetizioni)
+
+PREFIX  rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX  foaf:   <http://xmlns.com/foaf/0.1/> 
+PREFIX : <http://www.semanticweb.org/friday/ontologies/cinema#>
+
+SELECT ?s1 ?s2
+WHERE {
+   ?s1 rdf:type :Attore .
+   ?s2 rdf:type :Attore .
+   
+      ?s1 :ha_lavorato_con ?s2 .
+   filter (STR(?s1) < STR(?s2)) .
+
+}
+
+****************************************************************************
+****************************************************************************]

@@ -1,0 +1,2731 @@
+@prefix : <http://www.semanticweb.org/friday/ontologies/cinema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/friday/ontologies/cinema> .
+
+<http://www.semanticweb.org/friday/ontologies/cinema> rdf:type owl:Ontology ;
+                                                       owl:imports <http://www.ontologydesignpatterns.org/cp/owl/set.owl> ,
+                                                                   <http://xmlns.com/foaf/0.1/> ;
+                                                       <http://purl.org/dc/elements/1.1/creator> "Marco Scaletta" ;
+                                                       <http://purl.org/dc/elements/1.1/date> "2019-12-15T00:00:00"^^xsd:dateTime ;
+                                                       <http://purl.org/vocab/vann/preferredNamespacePrefix> "ModSem" ;
+                                                       <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.semanticweb.org/marco/ontologies/2019/ProgettoModWeb"^^xsd:anyURI ;
+                                                       rdfs:comment """Progetto d'esame per il corso di Modellazione Concettuale per il Web Semantico, Laurea Magistrale in Informatica, a.a. 2018/19, Dipartimento di Informati dell'Università degli Studi di Torino.
+
+L'ontologia si propone di modellare il dominio relativo all'ambito cinematografico, permettendo un'analisi delle relazioni tra prodotti cinematografici e persone che vi hanno lavorato, quali attori, registri e sceneggiatori."""@it ;
+                                                       rdfs:label "Progetto \"Modellazione Concettuale per il Web Semantico\" 2018/1"@it .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://dbpedia.org/ontology/afdbId
+<http://dbpedia.org/ontology/afdbId> rdf:type owl:AnnotationProperty ;
+                                     rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/allcinemaId
+<http://dbpedia.org/ontology/allcinemaId> rdf:type owl:AnnotationProperty ;
+                                          rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/amgid
+<http://dbpedia.org/ontology/amgid> rdf:type owl:AnnotationProperty ;
+                                    rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/bgafdId
+<http://dbpedia.org/ontology/bgafdId> rdf:type owl:AnnotationProperty ;
+                                      rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/cinematography
+<http://dbpedia.org/ontology/cinematography> rdf:type owl:AnnotationProperty ;
+                                             rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/costumeDesigner
+<http://dbpedia.org/ontology/costumeDesigner> rdf:type owl:AnnotationProperty ;
+                                              rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/director
+<http://dbpedia.org/ontology/director> rdf:type owl:AnnotationProperty ;
+                                       rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/eTeatrId
+<http://dbpedia.org/ontology/eTeatrId> rdf:type owl:AnnotationProperty ;
+                                       rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/editing
+<http://dbpedia.org/ontology/editing> rdf:type owl:AnnotationProperty ;
+                                      rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/egafdId
+<http://dbpedia.org/ontology/egafdId> rdf:type owl:AnnotationProperty ;
+                                      rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/eurobabeIndexId
+<http://dbpedia.org/ontology/eurobabeIndexId> rdf:type owl:AnnotationProperty ;
+                                              rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/filmAudioType
+<http://dbpedia.org/ontology/filmAudioType> rdf:type owl:AnnotationProperty ;
+                                            rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/filmColourType
+<http://dbpedia.org/ontology/filmColourType> rdf:type owl:AnnotationProperty ;
+                                             rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/filmRuntime
+<http://dbpedia.org/ontology/filmRuntime> rdf:type owl:AnnotationProperty ;
+                                          rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/firstBroadcast
+<http://dbpedia.org/ontology/firstBroadcast> rdf:type owl:AnnotationProperty ;
+                                             rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/gross
+<http://dbpedia.org/ontology/gross> rdf:type owl:AnnotationProperty ;
+                                    rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/iafdId
+<http://dbpedia.org/ontology/iafdId> rdf:type owl:AnnotationProperty ;
+                                     rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/idAllocine
+<http://dbpedia.org/ontology/idAllocine> rdf:type owl:AnnotationProperty ;
+                                         rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/makeupArtist
+<http://dbpedia.org/ontology/makeupArtist> rdf:type owl:AnnotationProperty ;
+                                           rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/producedBy
+<http://dbpedia.org/ontology/producedBy> rdf:type owl:AnnotationProperty ;
+                                         rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/quebecerTitle
+<http://dbpedia.org/ontology/quebecerTitle> rdf:type owl:AnnotationProperty ;
+                                            rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/setDesigner
+<http://dbpedia.org/ontology/setDesigner> rdf:type owl:AnnotationProperty ;
+                                          rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/specialEffects
+<http://dbpedia.org/ontology/specialEffects> rdf:type owl:AnnotationProperty ;
+                                             rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://dbpedia.org/ontology/titleLanguage
+<http://dbpedia.org/ontology/titleLanguage> rdf:type owl:AnnotationProperty ;
+                                            rdfs:domain <http://dbpedia.org/ontology/Film> .
+
+
+###  http://open.vocab.org/terms/defines
+<http://open.vocab.org/terms/defines> rdf:type owl:AnnotationProperty .
+
+
+###  http://open.vocab.org/terms/describes
+<http://open.vocab.org/terms/describes> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/coverage
+<http://purl.org/dc/elements/1.1/coverage> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/format
+<http://purl.org/dc/elements/1.1/format> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/identifier
+<http://purl.org/dc/elements/1.1/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/relation
+<http://purl.org/dc/elements/1.1/relation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/subject
+<http://purl.org/dc/elements/1.1/subject> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/type
+<http://purl.org/dc/elements/1.1/type> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> ,
+                                                       <http://purl.org/dc/terms/description> .
+
+
+###  http://purl.org/dc/terms/accessRights
+<http://purl.org/dc/terms/accessRights> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> .
+
+
+###  http://purl.org/dc/terms/alternative
+<http://purl.org/dc/terms/alternative> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> .
+
+
+###  http://purl.org/dc/terms/available
+<http://purl.org/dc/terms/available> rdf:type owl:AnnotationProperty ;
+                                     rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> .
+
+
+###  http://purl.org/dc/terms/conformsTo
+<http://purl.org/dc/terms/conformsTo> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                         <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/contributor> .
+
+
+###  http://purl.org/dc/terms/coverage
+<http://purl.org/dc/terms/coverage> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/creator> .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:AnnotationProperty ;
+                                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
+###  http://purl.org/dc/terms/dateAccepted
+<http://purl.org/dc/terms/dateAccepted> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
+###  http://purl.org/dc/terms/dateCopyrighted
+<http://purl.org/dc/terms/dateCopyrighted> rdf:type owl:AnnotationProperty ;
+                                           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
+###  http://purl.org/dc/terms/dateSubmitted
+<http://purl.org/dc/terms/dateSubmitted> rdf:type owl:AnnotationProperty ;
+                                         rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> .
+
+
+###  http://purl.org/dc/terms/extent
+<http://purl.org/dc/terms/extent> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> .
+
+
+###  http://purl.org/dc/terms/format
+<http://purl.org/dc/terms/format> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> .
+
+
+###  http://purl.org/dc/terms/hasFormat
+<http://purl.org/dc/terms/hasFormat> rdf:type owl:AnnotationProperty ;
+                                     rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                        <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/hasPart
+<http://purl.org/dc/terms/hasPart> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                      <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/hasVersion
+<http://purl.org/dc/terms/hasVersion> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                         <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> .
+
+
+###  http://purl.org/dc/terms/isFormatOf
+<http://purl.org/dc/terms/isFormatOf> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                         <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                       <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isReferencedBy
+<http://purl.org/dc/terms/isReferencedBy> rdf:type owl:AnnotationProperty ;
+                                          rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                             <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isReplacedBy
+<http://purl.org/dc/terms/isReplacedBy> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                           <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isRequiredBy
+<http://purl.org/dc/terms/isRequiredBy> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                           <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isVersionOf
+<http://purl.org/dc/terms/isVersionOf> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                          <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
+###  http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/language> .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> .
+
+
+###  http://purl.org/dc/terms/medium
+<http://purl.org/dc/terms/medium> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty ;
+                                     rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/publisher> .
+
+
+###  http://purl.org/dc/terms/references
+<http://purl.org/dc/terms/references> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                         <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/relation
+<http://purl.org/dc/terms/relation> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> .
+
+
+###  http://purl.org/dc/terms/replaces
+<http://purl.org/dc/terms/replaces> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                       <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/requires
+<http://purl.org/dc/terms/requires> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                       <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/source> ,
+                                                     <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/spatial
+<http://purl.org/dc/terms/spatial> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> .
+
+
+###  http://purl.org/dc/terms/subject
+<http://purl.org/dc/terms/subject> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/subject> .
+
+
+###  http://purl.org/dc/terms/tableOfContents
+<http://purl.org/dc/terms/tableOfContents> rdf:type owl:AnnotationProperty ;
+                                           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> ,
+                                                              <http://purl.org/dc/terms/description> .
+
+
+###  http://purl.org/dc/terms/temporal
+<http://purl.org/dc/terms/temporal> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty ;
+                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> .
+
+
+###  http://purl.org/dc/terms/type
+<http://purl.org/dc/terms/type> rdf:type owl:AnnotationProperty ;
+                                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/type> .
+
+
+###  http://purl.org/dc/terms/valid
+<http://purl.org/dc/terms/valid> rdf:type owl:AnnotationProperty ;
+                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2007/05/powder-s#describedby
+<http://www.w3.org/2007/05/powder-s#describedby> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://purl.org/dc/terms/Box
+<http://purl.org/dc/terms/Box> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/ISO3166
+<http://purl.org/dc/terms/ISO3166> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/ISO639-2
+<http://purl.org/dc/terms/ISO639-2> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/ISO639-3
+<http://purl.org/dc/terms/ISO639-3> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/Period
+<http://purl.org/dc/terms/Period> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/Point
+<http://purl.org/dc/terms/Point> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC1766
+<http://purl.org/dc/terms/RFC1766> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC3066
+<http://purl.org/dc/terms/RFC3066> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC4646
+<http://purl.org/dc/terms/RFC4646> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC5646
+<http://purl.org/dc/terms/RFC5646> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/URI
+<http://purl.org/dc/terms/URI> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/W3CDTF
+<http://purl.org/dc/terms/W3CDTF> rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#attore_in
+:attore_in rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :ha_attore ;
+           rdfs:domain :Attore ,
+                       <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:range <http://dbpedia.org/ontology/Film> ,
+                      <http://dbpedia.org/ontology/Work> ,
+                      :Film ,
+                      [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :ha_regista ;
+                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onClass :Regista
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :ha_sceneggiatore ;
+                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onClass :Sceneggiatore
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :ha_cast ;
+                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onClass :Cast
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :anno_di_uscita ;
+                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onDataRange xsd:nonNegativeInteger
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ]
+                                           ) ;
+                        rdf:type owl:Class
+                      ] ,
+                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                               owl:onProperty :ha_regista ;
+                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass :Regista
+                                             ]
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :ha_sceneggiatore ;
+                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass :Sceneggiatore
+                                             ]
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :ha_cast ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass :Cast
+                                             ]
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :anno_di_uscita ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange xsd:nonNegativeInteger
+                                             ]
+                                           ) ;
+                        rdf:type owl:Class
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :ha_regista ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Regista
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :ha_sceneggiatore ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Sceneggiatore
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :ha_cast ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Cast
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :anno_di_uscita ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:nonNegativeInteger
+                      ] ;
+           owl:propertyChainAxiom ( :membro_di_cast
+                                    :cast_di
+                                  ) ;
+           rdfs:comment "Relazione che indica in quale film ha recitato un certo attore"@it ;
+           rdfs:label "attore_in"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#cast_di
+:cast_di rdf:type owl:ObjectProperty ;
+         owl:inverseOf :ha_cast ;
+         rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                     <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                     :Cast ,
+                     [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :cast_ha_membro ;
+                                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                            ]
+                                          ) ;
+                       rdf:type owl:Class
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :cast_ha_membro ;
+                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                     ] ;
+         rdfs:range <http://dbpedia.org/ontology/Film> ,
+                    <http://dbpedia.org/ontology/Work> ,
+                    :Film ,
+                    [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :ha_regista ;
+                                                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                    owl:onClass :Regista
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :ha_sceneggiatore ;
+                                                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                    owl:onClass :Sceneggiatore
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :ha_cast ;
+                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                    owl:onClass :Cast
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :anno_di_uscita ;
+                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                    owl:onDataRange xsd:nonNegativeInteger
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ]
+                                         ) ;
+                      rdf:type owl:Class
+                    ] ,
+                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                             owl:onProperty :ha_regista ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :Regista
+                                           ]
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :ha_sceneggiatore ;
+                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :Sceneggiatore
+                                           ]
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :ha_cast ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onClass :Cast
+                                           ]
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :anno_di_uscita ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:nonNegativeInteger
+                                           ]
+                                         ) ;
+                      rdf:type owl:Class
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :ha_regista ;
+                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Regista
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :ha_sceneggiatore ;
+                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Sceneggiatore
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :ha_cast ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Cast
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :anno_di_uscita ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:nonNegativeInteger
+                    ] ;
+         rdfs:comment "Relazione che indica in quale film ha recitato un certo cast"@it ;
+         rdfs:label "cast_di"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro
+:cast_ha_membro rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> ;
+                owl:inverseOf :membro_di_cast ;
+                rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                            <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                            :Cast ,
+                            [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :cast_ha_membro ;
+                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :cast_ha_membro ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+                rdfs:range :Attore ,
+                           <http://xmlns.com/foaf/0.1/Person> ;
+                rdfs:comment "Relazione che indica l'appartenenza di un attore a un cast"@it ;
+                rdfs:label "cast_ha_membro"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_attore
+:ha_attore rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://dbpedia.org/ontology/Film> ,
+                       <http://dbpedia.org/ontology/Work> ,
+                       :Film ,
+                       [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :ha_regista ;
+                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                       owl:onClass :Regista
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :ha_sceneggiatore ;
+                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                       owl:onClass :Sceneggiatore
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :ha_cast ;
+                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                       owl:onClass :Cast
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :anno_di_uscita ;
+                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                       owl:onDataRange xsd:nonNegativeInteger
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ] ,
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_regista ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Regista
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_sceneggiatore ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Sceneggiatore
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_cast ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Cast
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :anno_di_uscita ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:nonNegativeInteger
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_regista ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Regista
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_sceneggiatore ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Sceneggiatore
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_cast ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Cast
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :anno_di_uscita ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:nonNegativeInteger
+                       ] ;
+           rdfs:range :Attore ,
+                      <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:comment "Relazione che indica un certo film ha un certo attore"@it ;
+           rdfs:label "ha_attore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_cast
+:ha_cast rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty ,
+                  owl:InverseFunctionalProperty ;
+         rdfs:domain <http://dbpedia.org/ontology/Film> ,
+                     <http://dbpedia.org/ontology/Work> ,
+                     :Film ,
+                     [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :ha_regista ;
+                                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onClass :Regista
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :ha_sceneggiatore ;
+                                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onClass :Sceneggiatore
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :ha_cast ;
+                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onClass :Cast
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :anno_di_uscita ;
+                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onDataRange xsd:nonNegativeInteger
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ]
+                                          ) ;
+                       rdf:type owl:Class
+                     ] ,
+                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                              owl:onProperty :ha_regista ;
+                                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass :Regista
+                                            ]
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :ha_sceneggiatore ;
+                                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass :Sceneggiatore
+                                            ]
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :ha_cast ;
+                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass :Cast
+                                            ]
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :anno_di_uscita ;
+                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onDataRange xsd:nonNegativeInteger
+                                            ]
+                                          ) ;
+                       rdf:type owl:Class
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :ha_regista ;
+                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Regista
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :ha_sceneggiatore ;
+                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Sceneggiatore
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :ha_cast ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Cast
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :anno_di_uscita ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onDataRange xsd:nonNegativeInteger
+                     ] ;
+         rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                    <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                    :Cast ,
+                    [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :cast_ha_membro ;
+                                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                           ]
+                                         ) ;
+                      rdf:type owl:Class
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :cast_ha_membro ;
+                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                    ] ;
+         rdfs:comment "Relazione che un certo film ha un certo cast"@it ;
+         rdfs:label "ha_cast"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con
+:ha_lavorato_con rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:SymmetricProperty ;
+                 rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                 rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+                 rdfs:comment "Relazione che indica con quale persona ha lavorato una certa persona"@it ;
+                 rdfs:label "ha_lavorato_con"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in
+:ha_lavorato_in rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+                rdfs:comment "Relazione che indica in quale opera cinematografica ha lavorato una certa persona"@it ;
+                rdfs:label "ha_lavorato_in"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_regista
+:ha_regista rdf:type owl:ObjectProperty ;
+            owl:inverseOf :regista_di ;
+            rdfs:domain <http://dbpedia.org/ontology/Film> ,
+                        <http://dbpedia.org/ontology/Work> ,
+                        :Film ,
+                        [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :ha_regista ;
+                                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onClass :Regista
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :ha_sceneggiatore ;
+                                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onClass :Sceneggiatore
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :ha_cast ;
+                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onClass :Cast
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :anno_di_uscita ;
+                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onDataRange xsd:nonNegativeInteger
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ,
+                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :ha_regista ;
+                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :Regista
+                                               ]
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :ha_sceneggiatore ;
+                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :Sceneggiatore
+                                               ]
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :ha_cast ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :Cast
+                                               ]
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :anno_di_uscita ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onDataRange xsd:nonNegativeInteger
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :ha_regista ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Regista
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :ha_sceneggiatore ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Sceneggiatore
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :ha_cast ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Cast
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :anno_di_uscita ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:nonNegativeInteger
+                        ] ;
+            rdfs:range :Autore ,
+                       :Regista ,
+                       <http://xmlns.com/foaf/0.1/Person> ;
+            rdfs:comment "Relazione che indica quale regista abbia diretto un certo film"@it ;
+            rdfs:label "ha_regista"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_sceneggiatore
+:ha_sceneggiatore rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :sceneggiatore_di ;
+                  rdfs:domain <http://dbpedia.org/ontology/Film> ,
+                              <http://dbpedia.org/ontology/Work> ,
+                              :Film ,
+                              [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                                     [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :ha_regista ;
+                                                                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                              owl:onClass :Regista
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :ha_sceneggiatore ;
+                                                                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                              owl:onClass :Sceneggiatore
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :ha_cast ;
+                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                              owl:onClass :Cast
+                                                                            ]
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :anno_di_uscita ;
+                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                              owl:onDataRange xsd:nonNegativeInteger
+                                                                            ]
+                                                                          ) ;
+                                                       rdf:type owl:Class
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ,
+                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :ha_regista ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass :Regista
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :ha_sceneggiatore ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass :Sceneggiatore
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :ha_cast ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass :Cast
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :anno_di_uscita ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange xsd:nonNegativeInteger
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :ha_regista ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Regista
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :ha_sceneggiatore ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Sceneggiatore
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :ha_cast ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Cast
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :anno_di_uscita ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:nonNegativeInteger
+                              ] ;
+                  rdfs:range :Autore ,
+                             :Sceneggiatore ,
+                             <http://xmlns.com/foaf/0.1/Person> ;
+                  rdfs:comment "Relazione che indica quale sceneggiatore abbia scritto un certo film"@it ;
+                  rdfs:label "ha_sceneggiatore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_sottoinsieme
+:ha_sottoinsieme rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :sottoinsieme_di ;
+                 rdf:type owl:TransitiveProperty ;
+                 rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                             <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ;
+                 rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                            <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ;
+                 rdfs:comment "Relazione che indica che un set ha un certo sottoinsieme"@it ;
+                 rdfs:label "ha_sottoinsieme"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast
+:membro_di_cast rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> ;
+                rdfs:domain :Attore ,
+                            <http://xmlns.com/foaf/0.1/Person> ;
+                rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                           <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                           :Cast ,
+                           [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :cast_ha_membro ;
+                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :cast_ha_membro ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+                rdfs:comment "Relazione che indica a quale cast appartiene un certo attore"@it ;
+                rdfs:label "membro_di_cast"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#regista_di
+:regista_di rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Autore ,
+                        :Regista ,
+                        <http://xmlns.com/foaf/0.1/Person> ;
+            rdfs:range <http://dbpedia.org/ontology/Film> ,
+                       <http://dbpedia.org/ontology/Work> ,
+                       :Film ,
+                       [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :ha_regista ;
+                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                       owl:onClass :Regista
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :ha_sceneggiatore ;
+                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                       owl:onClass :Sceneggiatore
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :ha_cast ;
+                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                       owl:onClass :Cast
+                                                                     ]
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty :anno_di_uscita ;
+                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                       owl:onDataRange xsd:nonNegativeInteger
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ] ,
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_regista ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Regista
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_sceneggiatore ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Sceneggiatore
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_cast ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Cast
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :anno_di_uscita ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:nonNegativeInteger
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_regista ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Regista
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_sceneggiatore ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Sceneggiatore
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_cast ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Cast
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :anno_di_uscita ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:nonNegativeInteger
+                       ] ;
+            rdfs:comment "Relazione che indica in quale film sia stato diretto da un certo regista"@it ;
+            rdfs:label "regista_di"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di
+:sceneggiatore_di rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :Autore ,
+                              :Sceneggiatore ,
+                              <http://xmlns.com/foaf/0.1/Person> ;
+                  rdfs:range <http://dbpedia.org/ontology/Film> ,
+                             <http://dbpedia.org/ontology/Work> ,
+                             :Film ,
+                             [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :ha_regista ;
+                                                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                             owl:onClass :Regista
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :ha_sceneggiatore ;
+                                                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                             owl:onClass :Sceneggiatore
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :ha_cast ;
+                                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                             owl:onClass :Cast
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :anno_di_uscita ;
+                                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                             owl:onDataRange xsd:nonNegativeInteger
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ,
+                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :ha_regista ;
+                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass :Regista
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :ha_sceneggiatore ;
+                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass :Sceneggiatore
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :ha_cast ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass :Cast
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :anno_di_uscita ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange xsd:nonNegativeInteger
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :ha_regista ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Regista
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :ha_sceneggiatore ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Sceneggiatore
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :ha_cast ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Cast
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :anno_di_uscita ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:nonNegativeInteger
+                             ] ;
+                  <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom> "sceneggiatore_di"@it ;
+                  rdfs:comment "Relazione che indica quale film sia stato scritto da un certo sceneggiatore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#sottoinsieme_di
+:sottoinsieme_di rdf:type owl:ObjectProperty ,
+                          owl:TransitiveProperty ;
+                 rdfs:comment "Relazione che indica a quale insieme appartiene un certo set"@it ;
+                 rdfs:label "sottoinsieme_di"@it .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/alternative
+<http://purl.org/dc/terms/alternative> rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/terms/title> ;
+                                       rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/available
+<http://purl.org/dc/terms/available> rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
+                                     rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
+                                   rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty ;
+                                rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/dateAccepted
+<http://purl.org/dc/terms/dateAccepted> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
+                                        rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/dateCopyrighted
+<http://purl.org/dc/terms/dateCopyrighted> rdf:type owl:DatatypeProperty ;
+                                           rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
+                                           rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/dateSubmitted
+<http://purl.org/dc/terms/dateSubmitted> rdf:type owl:DatatypeProperty ;
+                                         rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
+                                         rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
+                                  rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
+                                    rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty ;
+                                 rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/valid
+<http://purl.org/dc/terms/valid> rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
+                                 rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#anno_di_uscita
+:anno_di_uscita rdf:type owl:DatatypeProperty ;
+                rdfs:domain <http://dbpedia.org/ontology/Film> ,
+                            <http://dbpedia.org/ontology/Work> ,
+                            :Film ;
+                rdfs:range xsd:nonNegativeInteger ;
+                rdfs:comment "Anno di uscita di un film"@it ;
+                rdfs:label "anno_di_uscita"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_durata
+:ha_durata rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://dbpedia.org/ontology/Film> ,
+                       <http://dbpedia.org/ontology/Work> ,
+                       :Film ;
+           rdfs:range xsd:nonNegativeInteger ;
+           rdfs:comment "Durata di un film"@it ;
+           rdfs:label "ha_durata"@it .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/Film
+<http://dbpedia.org/ontology/Film> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://dbpedia.org/ontology/Work> ;
+                                   rdfs:isDefinedBy <http://dbpedia.org/ontology/> ;
+                                   rdfs:label "Film"@de ,
+                                              "film"@fr ,
+                                              "film"@nl ,
+                                              "film"@pl ,
+                                              "movie"@en ,
+                                              "película"@es ,
+                                              "scannán"@ga ,
+                                              "ταινία"@el ,
+                                              "فيلم"@ar ,
+                                              "映画"@ja ,
+                                              "영화"@ko ;
+                                   <http://www.w3.org/2007/05/powder-s#describedby> <http://dbpedia.org/ontology/data/definitions.ttl> ;
+                                   <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyClass:Film> .
+
+
+###  http://dbpedia.org/ontology/Work
+<http://dbpedia.org/ontology/Work> rdf:type owl:Class ;
+                                   rdfs:comment "Class that defines a artificial creation"@en ;
+                                   rdfs:label "work"@en .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Attore
+:Attore rdf:type owl:Class ;
+        rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+        rdfs:comment "Persona che ha recitato in un film"@it ;
+        rdfs:label "Attore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Autore
+:Autore rdf:type owl:Class ;
+        rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+        rdfs:comment "Autore di un film"@it ;
+        rdfs:label "Autore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Cast
+:Cast rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :cast_ha_membro ;
+                                                   owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+      rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                      <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                      [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :cast_ha_membro ;
+                                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                             ]
+                                           ) ;
+                        rdf:type owl:Class
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :cast_ha_membro ;
+                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "Definisce un insieme di attori"@it ;
+      rdfs:label "Cast"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Cortometraggio
+:Cortometraggio rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :ha_durata ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                        owl:onDatatype xsd:nonNegativeInteger ;
+                                                        owl:withRestrictions ( [ xsd:maxInclusive "30"^^xsd:nonNegativeInteger
+                                                                               ]
+                                                                             )
+                                                      ]
+                                    ] ;
+                rdfs:subClassOf <http://dbpedia.org/ontology/Film> ,
+                                <http://dbpedia.org/ontology/Work> ,
+                                :Film ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :ha_durata ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                    owl:onDatatype xsd:nonNegativeInteger ;
+                                                    owl:withRestrictions ( [ xsd:maxInclusive "30"^^xsd:nonNegativeInteger
+                                                                           ]
+                                                                         )
+                                                  ]
+                                ] ;
+                rdfs:comment "Film dalla durata fino a 30 minuti"@it ;
+                rdfs:label "Cortometraggio"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Film
+:Film rdf:type owl:Class ;
+      rdfs:subClassOf <http://dbpedia.org/ontology/Film> ,
+                      <http://dbpedia.org/ontology/Work> ;
+      rdfs:comment "Classe che definisce il film come opera cinematografica alla quale creazione partecipano attori, registri e sceneggiatori"@it ;
+      rdfs:label "Film"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Lungometraggio
+:Lungometraggio rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :ha_durata ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                        owl:onDatatype xsd:nonNegativeInteger ;
+                                                        owl:withRestrictions ( [ xsd:minInclusive "60"^^xsd:nonNegativeInteger
+                                                                               ]
+                                                                             )
+                                                      ]
+                                    ] ;
+                rdfs:subClassOf <http://dbpedia.org/ontology/Film> ,
+                                <http://dbpedia.org/ontology/Work> ,
+                                :Film ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :ha_durata ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                    owl:onDatatype xsd:nonNegativeInteger ;
+                                                    owl:withRestrictions ( [ xsd:minInclusive "60"^^xsd:nonNegativeInteger
+                                                                           ]
+                                                                         )
+                                                  ]
+                                ] ;
+                rdfs:comment "Film dalla durata maggiore di 60 minuti"@it ;
+                rdfs:label "Lungometraggio"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Regista
+:Regista rdf:type owl:Class ;
+         rdfs:subClassOf :Autore ,
+                         <http://xmlns.com/foaf/0.1/Person> ;
+         rdfs:comment "Regista di un film"@it ;
+         rdfs:label "Regista"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore
+:Sceneggiatore rdf:type owl:Class ;
+               rdfs:subClassOf :Autore ,
+                               <http://xmlns.com/foaf/0.1/Person> ;
+               rdfs:comment "Sceneggiatore di un film"@it ;
+               rdfs:label "Sceneggiatore"@it .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:comment "Most general class"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:comment "Equivalent to an uman being"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#CastProvaAPrendermi
+:CastProvaAPrendermi rdf:type owl:NamedIndividual ,
+                              <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                              <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                              :Cast ,
+                              [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :cast_ha_membro ;
+                                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :cast_ha_membro ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+                     <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> :LeonardoDiCaprio ,
+                                                                                                   :TomHanks ;
+                     :cast_di :ProvaAPrendermi ;
+                     :cast_ha_membro :LeonardoDiCaprio ,
+                                     :TomHanks ;
+                     rdfs:comment "Cast del film \"Prova a prendermi\""@it ;
+                     rdfs:label "CastProvaAPrendermi"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#CastShutterIsland
+:CastShutterIsland rdf:type owl:NamedIndividual ,
+                            <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                            <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                            :Cast ,
+                            [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :cast_ha_membro ;
+                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :cast_ha_membro ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ;
+                   <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> :LeonardoDiCaprio ,
+                                                                                                 :MarkRuffalo ;
+                   :cast_di :ShutterIsland ;
+                   :cast_ha_membro :LeonardoDiCaprio ,
+                                   :MarkRuffalo ;
+                   rdfs:comment "Cast del film \"Shutter Island\""@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Cast_TheDeparted
+:Cast_TheDeparted rdf:type owl:NamedIndividual ,
+                           <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                           <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                           :Cast ,
+                           [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :cast_ha_membro ;
+                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :cast_ha_membro ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+                  <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> :LeonardoDiCaprio ,
+                                                                                                :MattDamon ;
+                  :cast_di :TheDeparted ;
+                  :cast_ha_membro :LeonardoDiCaprio ,
+                                  :MattDamon ;
+                  rdfs:comment "Cast del film \"The Departed\""@it ;
+                  rdfs:label "CastTheDeparted"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#JeffNathanson
+:JeffNathanson rdf:type owl:NamedIndividual ,
+                        :Autore ,
+                        :Sceneggiatore ,
+                        <http://xmlns.com/foaf/0.1/Person> ;
+               :ha_lavorato_con :LeonardoDiCaprio ,
+                                :StevenSpielberg ,
+                                :TomHanks ;
+               :ha_lavorato_in :ProvaAPrendermi ;
+               :sceneggiatore_di :ProvaAPrendermi ;
+               rdfs:comment "Sceneggiatore, regista e produttore cinematografico statunitense."@it ;
+               rdfs:label "JeffNathanson"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#LaetaKalogridis
+:LaetaKalogridis rdf:type owl:NamedIndividual ,
+                          :Autore ,
+                          :Sceneggiatore ,
+                          <http://xmlns.com/foaf/0.1/Person> ;
+                 :ha_lavorato_con :LeonardoDiCaprio ,
+                                  :MarkRuffalo ,
+                                  :MartinScorsese ;
+                 :ha_lavorato_in :ShutterIsland ;
+                 :sceneggiatore_di :ShutterIsland ;
+                 rdfs:comment "Sceneggiatrice e produttrice cinematografica statunitense di origini greche."@it ;
+                 rdfs:label "LaetaKalogridis"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio
+:LeonardoDiCaprio rdf:type owl:NamedIndividual ,
+                           :Attore ,
+                           <http://xmlns.com/foaf/0.1/Person> ;
+                  <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :CastProvaAPrendermi ,
+                                                                                                 :CastShutterIsland ,
+                                                                                                 :Cast_TheDeparted ;
+                  :ha_lavorato_con :JeffNathanson ,
+                                   :LaetaKalogridis ,
+                                   :MarkRuffalo ,
+                                   :MartinScorsese ,
+                                   :MattDamon ,
+                                   :StevenSpielberg ,
+                                   :TomHanks ,
+                                   :WilliamMonahan ;
+                  :ha_lavorato_in :ProvaAPrendermi ,
+                                  :ShutterIsland ,
+                                  :TheDeparted ;
+                  :membro_di_cast :CastProvaAPrendermi ,
+                                  :CastShutterIsland ,
+                                  :Cast_TheDeparted ;
+                  rdfs:comment "Attore, produttore cinematografico e attivista statunitense di origini italiane."@it ;
+                  rdfs:label "LeonardoDiCaprio"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo
+:MarkRuffalo rdf:type owl:NamedIndividual ,
+                      :Attore ,
+                      <http://xmlns.com/foaf/0.1/Person> ;
+             <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :CastShutterIsland ;
+             :ha_lavorato_con :LaetaKalogridis ,
+                              :LeonardoDiCaprio ,
+                              :MartinScorsese ;
+             :ha_lavorato_in :ShutterIsland ;
+             :membro_di_cast :CastShutterIsland ;
+             rdfs:comment "Attore, regista, produttore cinematografico e sceneggiatore statunitense."@it ;
+             rdfs:label "MarkRuffalo"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese
+:MartinScorsese rdf:type owl:NamedIndividual ,
+                         :Autore ,
+                         :Regista ,
+                         <http://xmlns.com/foaf/0.1/Person> ;
+                :ha_lavorato_con :LaetaKalogridis ,
+                                 :LeonardoDiCaprio ,
+                                 :MarkRuffalo ,
+                                 :MattDamon ,
+                                 :WilliamMonahan ;
+                :ha_lavorato_in :ShutterIsland ,
+                                :TheDeparted ;
+                :regista_di :ShutterIsland ,
+                            :TheDeparted ;
+                rdfs:comment "Regista, sceneggiatore e produttore cinematografico statunitense con cittadinanza italiana."@it ;
+                rdfs:label "MartinScorsese"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#MattDamon
+:MattDamon rdf:type owl:NamedIndividual ,
+                    :Attore ,
+                    <http://xmlns.com/foaf/0.1/Person> ;
+           <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :Cast_TheDeparted ;
+           :ha_lavorato_con :LeonardoDiCaprio ,
+                            :MartinScorsese ,
+                            :WilliamMonahan ;
+           :ha_lavorato_in :TheDeparted ;
+           :membro_di_cast :Cast_TheDeparted ;
+           rdfs:comment "Attore, sceneggiatore, doppiatore e produttore cinematografico statunitense."@it ;
+           rdfs:label "MattDamon"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi
+:ProvaAPrendermi rdf:type owl:NamedIndividual ,
+                          <http://dbpedia.org/ontology/Film> ,
+                          <http://dbpedia.org/ontology/Work> ,
+                          :Film ,
+                          <http://xmlns.com/foaf/0.1/Person> ,
+                          [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :ha_regista ;
+                                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass :Regista
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :ha_sceneggiatore ;
+                                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass :Sceneggiatore
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :ha_cast ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass :Cast
+                                                                        ]
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :anno_di_uscita ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:nonNegativeInteger
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ,
+                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :ha_regista ;
+                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onClass :Regista
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :ha_sceneggiatore ;
+                                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onClass :Sceneggiatore
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :ha_cast ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onClass :Cast
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :anno_di_uscita ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange xsd:nonNegativeInteger
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :ha_regista ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Regista
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :ha_sceneggiatore ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Sceneggiatore
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :ha_cast ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Cast
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :anno_di_uscita ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:nonNegativeInteger
+                          ] ;
+                 :ha_cast :CastProvaAPrendermi ;
+                 :ha_regista :StevenSpielberg ;
+                 :ha_sceneggiatore :JeffNathanson ;
+                 :anno_di_uscita 2002 ;
+                 :ha_durata 141 ;
+                 rdfs:comment "Film del 2002 diretto da Steven Spielberg, adattamento del romanzo autobiografico Catch Me if You Can di Frank Abagnale Jr."@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland
+:ShutterIsland rdf:type owl:NamedIndividual ,
+                        <http://dbpedia.org/ontology/Film> ,
+                        <http://dbpedia.org/ontology/Work> ,
+                        :Film ,
+                        <http://xmlns.com/foaf/0.1/Person> ,
+                        [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :ha_regista ;
+                                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onClass :Regista
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :ha_sceneggiatore ;
+                                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onClass :Sceneggiatore
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :ha_cast ;
+                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onClass :Cast
+                                                                      ]
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :anno_di_uscita ;
+                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onDataRange xsd:nonNegativeInteger
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ,
+                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :ha_regista ;
+                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :Regista
+                                               ]
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :ha_sceneggiatore ;
+                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :Sceneggiatore
+                                               ]
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :ha_cast ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :Cast
+                                               ]
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :anno_di_uscita ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onDataRange xsd:nonNegativeInteger
+                                               ]
+                                             ) ;
+                          rdf:type owl:Class
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :ha_regista ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Regista
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :ha_sceneggiatore ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Sceneggiatore
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :ha_cast ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Cast
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :anno_di_uscita ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:nonNegativeInteger
+                        ] ;
+               :ha_cast :CastShutterIsland ;
+               :ha_regista :MartinScorsese ;
+               :ha_sceneggiatore :LaetaKalogridis ;
+               :anno_di_uscita 2010 ;
+               :ha_durata 138 ;
+               rdfs:comment "Film del 2010 diretto da Martin Scorsese."@it ;
+               rdfs:label "ShutterIsland"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#StevenSpielberg
+:StevenSpielberg rdf:type owl:NamedIndividual ,
+                          :Autore ,
+                          :Regista ,
+                          <http://xmlns.com/foaf/0.1/Person> ;
+                 :ha_lavorato_con :JeffNathanson ,
+                                  :LeonardoDiCaprio ,
+                                  :TomHanks ;
+                 :ha_lavorato_in :ProvaAPrendermi ;
+                 :regista_di :ProvaAPrendermi ;
+                 rdfs:comment "Regista, sceneggiatore, produttore cinematografico e produttore televisivo statunitense."@it ;
+                 rdfs:label "StevenSpielberg"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted
+:TheDeparted rdf:type owl:NamedIndividual ,
+                      <http://dbpedia.org/ontology/Film> ,
+                      <http://dbpedia.org/ontology/Work> ,
+                      :Film ,
+                      <http://xmlns.com/foaf/0.1/Person> ,
+                      [ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                                             [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :ha_regista ;
+                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onClass :Regista
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :ha_sceneggiatore ;
+                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onClass :Sceneggiatore
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :ha_cast ;
+                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onClass :Cast
+                                                                    ]
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :anno_di_uscita ;
+                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onDataRange xsd:nonNegativeInteger
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ]
+                                           ) ;
+                        rdf:type owl:Class
+                      ] ,
+                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                               owl:onProperty :ha_regista ;
+                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass :Regista
+                                             ]
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :ha_sceneggiatore ;
+                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass :Sceneggiatore
+                                             ]
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :ha_cast ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass :Cast
+                                             ]
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :anno_di_uscita ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange xsd:nonNegativeInteger
+                                             ]
+                                           ) ;
+                        rdf:type owl:Class
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :ha_regista ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Regista
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :ha_sceneggiatore ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Sceneggiatore
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :ha_cast ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Cast
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :anno_di_uscita ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:nonNegativeInteger
+                      ] ;
+             :ha_cast :Cast_TheDeparted ;
+             :ha_regista :MartinScorsese ;
+             :ha_sceneggiatore :WilliamMonahan ;
+             :anno_di_uscita 2006 ;
+             :ha_durata "151"^^xsd:nonNegativeInteger ;
+             rdfs:comment "Film del 2006 diretto da Martin Scorsese."@it ;
+             rdfs:label "TheDeparted"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#TomHanks
+:TomHanks rdf:type owl:NamedIndividual ,
+                   :Attore ,
+                   <http://xmlns.com/foaf/0.1/Person> ;
+          <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> :CastProvaAPrendermi ;
+          :ha_lavorato_con :JeffNathanson ,
+                           :LeonardoDiCaprio ,
+                           :StevenSpielberg ;
+          :ha_lavorato_in :ProvaAPrendermi ;
+          :membro_di_cast :CastProvaAPrendermi ;
+          rdfs:comment "Attore, regista, sceneggiatore, doppiatore, produttore cinematografico e televisivo statunitense."@it ;
+          rdfs:label "TomHanks"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#WilliamMonahan
+:WilliamMonahan rdf:type owl:NamedIndividual ,
+                         :Autore ,
+                         :Sceneggiatore ,
+                         <http://xmlns.com/foaf/0.1/Person> ;
+                :ha_lavorato_con :LeonardoDiCaprio ,
+                                 :MartinScorsese ,
+                                 :MattDamon ;
+                :ha_lavorato_in :TheDeparted ;
+                :sceneggiatore_di :TheDeparted ;
+                rdfs:comment "Sceneggiatore, regista e romanziere statunitense."@it ;
+                rdfs:label "WilliamMonahan"@it .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://dbpedia.org/ontology/> <http://open.vocab.org/terms/defines> <http://dbpedia.org/ontology/Film> .
+
+
+<http://dbpedia.org/ontology/data/definitions.ttl> <http://open.vocab.org/terms/describes> <http://dbpedia.org/ontology/Film> .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_regista ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Regista
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_sceneggiatore ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Sceneggiatore
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_cast ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Cast
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :anno_di_uscita ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:nonNegativeInteger
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Film>
+] .
+
+
+[ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_regista ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Regista
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_sceneggiatore ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Sceneggiatore
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_cast ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Cast
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :anno_di_uscita ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:nonNegativeInteger
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Work>
+] .
+
+
+[ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_regista ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Regista
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_sceneggiatore ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Sceneggiatore
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_cast ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Cast
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :anno_di_uscita ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:nonNegativeInteger
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                           owl:onProperty :ha_regista ;
+                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :Regista
+                                         ]
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :ha_sceneggiatore ;
+                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :Sceneggiatore
+                                         ]
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :ha_cast ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :Cast
+                                         ]
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :anno_di_uscita ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:nonNegativeInteger
+                                         ]
+                                       ) ;
+                    rdf:type owl:Class
+                  ]
+] .
+
+
+[ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_regista ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Regista
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_sceneggiatore ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Sceneggiatore
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_cast ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Cast
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :anno_di_uscita ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:nonNegativeInteger
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty :ha_regista ;
+                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Regista
+                  ]
+] .
+
+
+[ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_regista ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Regista
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_sceneggiatore ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Sceneggiatore
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_cast ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Cast
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :anno_di_uscita ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:nonNegativeInteger
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty :ha_sceneggiatore ;
+                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Sceneggiatore
+                  ]
+] .
+
+
+[ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_regista ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Regista
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_sceneggiatore ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Sceneggiatore
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_cast ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Cast
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :anno_di_uscita ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:nonNegativeInteger
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty :ha_cast ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Cast
+                  ]
+] .
+
+
+[ owl:intersectionOf ( <http://dbpedia.org/ontology/Film>
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_regista ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Regista
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_sceneggiatore ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Sceneggiatore
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :ha_cast ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Cast
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :anno_di_uscita ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:nonNegativeInteger
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty :anno_di_uscita ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:nonNegativeInteger
+                  ]
+] .
+
+
+[ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :cast_ha_membro ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection>
+] .
+
+
+[ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :cast_ha_membro ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+] .
+
+
+[ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :cast_ha_membro ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf :Cast
+] .
+
+
+[ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :cast_ha_membro ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty :cast_ha_membro ;
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                  ]
+] .
+
+
+[ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_regista ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Regista
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_sceneggiatore ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Sceneggiatore
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_cast ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Cast
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :anno_di_uscita ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty :ha_regista ;
+                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Regista
+                  ]
+] .
+
+
+[ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_regista ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Regista
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_sceneggiatore ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Sceneggiatore
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_cast ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Cast
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :anno_di_uscita ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty :ha_sceneggiatore ;
+                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Sceneggiatore
+                  ]
+] .
+
+
+[ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_regista ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Regista
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_sceneggiatore ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Sceneggiatore
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_cast ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Cast
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :anno_di_uscita ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty :ha_cast ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Cast
+                  ]
+] .
+
+
+[ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_regista ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Regista
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_sceneggiatore ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Sceneggiatore
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ha_cast ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Cast
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :anno_di_uscita ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty :anno_di_uscita ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:nonNegativeInteger
+                  ]
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :ha_durata ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:minInclusive "60"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Film>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :ha_durata ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:minInclusive "60"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Work>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :ha_durata ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:minInclusive "60"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf :Film
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :ha_durata ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:minInclusive "60"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf :Lungometraggio
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :ha_durata ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:maxInclusive "30"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Film>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :ha_durata ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:maxInclusive "30"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Work>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :ha_durata ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:maxInclusive "30"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf :Cortometraggio
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :ha_durata ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:maxInclusive "30"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf :Film
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :JeffNathanson
+                        :LaetaKalogridis
+                        :LeonardoDiCaprio
+                        :MarkRuffalo
+                        :MartinScorsese
+                        :MattDamon
+                        :StevenSpielberg
+                        :TomHanks
+                        :WilliamMonahan
+                      )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:person rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:film rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:actor rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:cast rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:person1 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:person2 rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Aggiunge la relazione ha_lavorato_in per l'attore  in modo che la regola HaLavoratoCon restituisca i risultati voluti"^^xsd:string ;
+   rdfs:label "AttoreHaLavoratoIn"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :attore_in ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :person ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :ha_lavorato_in ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :person ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Aggiunge la relazione ha_lavorato_in per un attore appartenente a un cast in modo che la regola HaLavoratoCon restituisca i risultati voluti"^^xsd:string ;
+   rdfs:label "AttoreMembroDiCastHaLavoratoIn"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :membro_di_cast ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :actor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :cast
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :cast_di ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :cast ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :ha_lavorato_in ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :actor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che permette di inferire con quale persone abbia lavorato una certa persona (supplisce la problema di fare tale inferenza con le property chain)"^^xsd:string ;
+   rdfs:label "HaLavoratoCon"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :person1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :person2
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :ha_lavorato_in ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :person1 ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :ha_lavorato_in ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :person2 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :ha_lavorato_con ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :person1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :person2
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Aggiunge la relazione ha_lavorato_in per il regista in modo che la regola HaLavoratoCon restituisca i risultati voluti"^^xsd:string ;
+   rdfs:label "RegistaHaLavoratoIn"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :regista_di ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :person ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :ha_lavorato_in ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :person ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Aggiunge la relazione ha_lavorato_in per gli sceneggiatori in modo che la regola HaLavoratoCon restituisca i risultati voluti"^^xsd:string ;
+   rdfs:label "SceneggiatoreHaLavoratoIn"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :sceneggiatore_di ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :person ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :ha_lavorato_in ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :person ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :film
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
