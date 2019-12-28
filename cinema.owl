@@ -224,12 +224,14 @@ L'ontologia si propone di modellare il dominio relativo all'ambito cinematografi
 
 ###  http://purl.org/dc/terms/alternative
 <http://purl.org/dc/terms/alternative> rdf:type owl:AnnotationProperty ;
-                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> .
+                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> ;
+                                       rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/available
 <http://purl.org/dc/terms/available> rdf:type owl:AnnotationProperty ;
-                                     rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+                                     rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                     rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/bibliographicCitation
@@ -255,7 +257,8 @@ L'ontologia si propone di modellare il dominio relativo all'ambito cinematografi
 
 ###  http://purl.org/dc/terms/created
 <http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty ;
-                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                   rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/creator
@@ -265,22 +268,26 @@ L'ontologia si propone di modellare il dominio relativo all'ambito cinematografi
 
 ###  http://purl.org/dc/terms/date
 <http://purl.org/dc/terms/date> rdf:type owl:AnnotationProperty ;
-                                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+                                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/dateAccepted
 <http://purl.org/dc/terms/dateAccepted> rdf:type owl:AnnotationProperty ;
-                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                        rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/dateCopyrighted
 <http://purl.org/dc/terms/dateCopyrighted> rdf:type owl:AnnotationProperty ;
-                                           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+                                           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                           rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/dateSubmitted
 <http://purl.org/dc/terms/dateSubmitted> rdf:type owl:AnnotationProperty ;
-                                         rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+                                         rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                         rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/description
@@ -359,7 +366,8 @@ L'ontologia si propone di modellare il dominio relativo all'ambito cinematografi
 
 ###  http://purl.org/dc/terms/issued
 <http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty ;
-                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                  rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/language
@@ -379,7 +387,8 @@ L'ontologia si propone di modellare il dominio relativo all'ambito cinematografi
 
 ###  http://purl.org/dc/terms/modified
 <http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty ;
-                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                    rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/publisher
@@ -444,7 +453,8 @@ L'ontologia si propone di modellare il dominio relativo all'ambito cinematografi
 
 ###  http://purl.org/dc/terms/title
 <http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty ;
-                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> .
+                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> ;
+                                 rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/type
@@ -454,7 +464,8 @@ L'ontologia si propone di modellare il dominio relativo all'ambito cinematografi
 
 ###  http://purl.org/dc/terms/valid
 <http://purl.org/dc/terms/valid> rdf:type owl:AnnotationProperty ;
-                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> .
+                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                 rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -1315,66 +1326,55 @@ L'ontologia si propone di modellare il dominio relativo all'ambito cinematografi
 
 ###  http://purl.org/dc/terms/alternative
 <http://purl.org/dc/terms/alternative> rdf:type owl:DatatypeProperty ;
-                                       rdfs:subPropertyOf <http://purl.org/dc/terms/title> ;
-                                       rdfs:range rdfs:Literal .
+                                       rdfs:subPropertyOf <http://purl.org/dc/terms/title> .
 
 
 ###  http://purl.org/dc/terms/available
 <http://purl.org/dc/terms/available> rdf:type owl:DatatypeProperty ;
-                                     rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                     rdfs:range rdfs:Literal .
+                                     rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
 
 
 ###  http://purl.org/dc/terms/created
 <http://purl.org/dc/terms/created> rdf:type owl:DatatypeProperty ;
-                                   rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                   rdfs:range rdfs:Literal .
+                                   rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
 
 
 ###  http://purl.org/dc/terms/date
-<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty ;
-                                rdfs:range rdfs:Literal .
+<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty .
 
 
 ###  http://purl.org/dc/terms/dateAccepted
 <http://purl.org/dc/terms/dateAccepted> rdf:type owl:DatatypeProperty ;
-                                        rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                        rdfs:range rdfs:Literal .
+                                        rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
 
 
 ###  http://purl.org/dc/terms/dateCopyrighted
 <http://purl.org/dc/terms/dateCopyrighted> rdf:type owl:DatatypeProperty ;
-                                           rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                           rdfs:range rdfs:Literal .
+                                           rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
 
 
 ###  http://purl.org/dc/terms/dateSubmitted
 <http://purl.org/dc/terms/dateSubmitted> rdf:type owl:DatatypeProperty ;
-                                         rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                         rdfs:range rdfs:Literal .
+                                         rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
 
 
 ###  http://purl.org/dc/terms/issued
 <http://purl.org/dc/terms/issued> rdf:type owl:DatatypeProperty ;
-                                  rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                  rdfs:range rdfs:Literal .
+                                  rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
 
 
 ###  http://purl.org/dc/terms/modified
 <http://purl.org/dc/terms/modified> rdf:type owl:DatatypeProperty ;
-                                    rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                    rdfs:range rdfs:Literal .
+                                    rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
 
 
 ###  http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty ;
-                                 rdfs:range rdfs:Literal .
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty .
 
 
 ###  http://purl.org/dc/terms/valid
 <http://purl.org/dc/terms/valid> rdf:type owl:DatatypeProperty ;
-                                 rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                 rdfs:range rdfs:Literal .
+                                 rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
 
 
 ###  http://www.semanticweb.org/friday/ontologies/cinema#anno_di_uscita
@@ -1395,6 +1395,18 @@ L'ontologia si propone di modellare il dominio relativo all'ambito cinematografi
            rdfs:range xsd:nonNegativeInteger ;
            rdfs:comment "Durata di un film"@it ;
            rdfs:label "ha_durata"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#titolo
+:titolo rdf:type owl:DatatypeProperty ;
+        rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+        rdfs:range xsd:string .
 
 
 #################################################################
@@ -1650,6 +1662,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                                 :TomHanks ;
                :ha_lavorato_in :ProvaAPrendermi ;
                :sceneggiatore_di :ProvaAPrendermi ;
+               :nome "Jeff Nathanson"^^xsd:string ;
                rdfs:comment "Sceneggiatore, regista e produttore cinematografico statunitense."@it ;
                rdfs:label "JeffNathanson"@it .
 
@@ -1664,6 +1677,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                                   :MartinScorsese ;
                  :ha_lavorato_in :ShutterIsland ;
                  :sceneggiatore_di :ShutterIsland ;
+                 :nome "Laeta Kalogridis"^^xsd:string ;
                  rdfs:comment "Sceneggiatrice e produttrice cinematografica statunitense di origini greche."@it ;
                  rdfs:label "LaetaKalogridis"@it .
 
@@ -1689,6 +1703,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                   :membro_di_cast :CastProvaAPrendermi ,
                                   :CastShutterIsland ,
                                   :Cast_TheDeparted ;
+                  :nome "Leonardo Di Caprio"^^xsd:string ;
                   rdfs:comment "Attore, produttore cinematografico e attivista statunitense di origini italiane."@it ;
                   rdfs:label "LeonardoDiCaprio"@it .
 
@@ -1703,6 +1718,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                               :MartinScorsese ;
              :ha_lavorato_in :ShutterIsland ;
              :membro_di_cast :CastShutterIsland ;
+             :nome "Mark Ruffalo"^^xsd:string ;
              rdfs:comment "Attore, regista, produttore cinematografico e sceneggiatore statunitense."@it ;
              rdfs:label "MarkRuffalo"@it .
 
@@ -1721,6 +1737,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                                 :TheDeparted ;
                 :regista_di :ShutterIsland ,
                             :TheDeparted ;
+                :nome "Martin Scorsese"^^xsd:string ;
                 rdfs:comment "Regista, sceneggiatore e produttore cinematografico statunitense con cittadinanza italiana."@it ;
                 rdfs:label "MartinScorsese"@it .
 
@@ -1735,6 +1752,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                             :WilliamMonahan ;
            :ha_lavorato_in :TheDeparted ;
            :membro_di_cast :Cast_TheDeparted ;
+           :nome "Matt Damon"^^xsd:string ;
            rdfs:comment "Attore, sceneggiatore, doppiatore e produttore cinematografico statunitense."@it ;
            rdfs:label "MattDamon"@it .
 
@@ -1820,6 +1838,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                  :ha_sceneggiatore :JeffNathanson ;
                  :anno_di_uscita 2002 ;
                  :ha_durata 141 ;
+                 :titolo "Prova a prendermi"^^xsd:string ;
                  rdfs:comment "Film del 2002 diretto da Steven Spielberg, adattamento del romanzo autobiografico Catch Me if You Can di Frank Abagnale Jr."@it .
 
 
@@ -1904,6 +1923,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                :ha_sceneggiatore :LaetaKalogridis ;
                :anno_di_uscita 2010 ;
                :ha_durata 138 ;
+               :titolo "Shutter Island"^^xsd:string ;
                rdfs:comment "Film del 2010 diretto da Martin Scorsese."@it ;
                rdfs:label "ShutterIsland"@it .
 
@@ -1918,6 +1938,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                                   :TomHanks ;
                  :ha_lavorato_in :ProvaAPrendermi ;
                  :regista_di :ProvaAPrendermi ;
+                 :nome "Steven Spielberg"^^xsd:string ;
                  rdfs:comment "Regista, sceneggiatore, produttore cinematografico e produttore televisivo statunitense."@it ;
                  rdfs:label "StevenSpielberg"@it .
 
@@ -2003,6 +2024,7 @@ owl:Thing rdfs:comment "Most general class"@en .
              :ha_sceneggiatore :WilliamMonahan ;
              :anno_di_uscita 2006 ;
              :ha_durata "151"^^xsd:nonNegativeInteger ;
+             :titolo "The Departed"^^xsd:string ;
              rdfs:comment "Film del 2006 diretto da Martin Scorsese."@it ;
              rdfs:label "TheDeparted"@it .
 
@@ -2017,6 +2039,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                            :StevenSpielberg ;
           :ha_lavorato_in :ProvaAPrendermi ;
           :membro_di_cast :CastProvaAPrendermi ;
+          :nome "Steven Spielberg"^^xsd:string ;
           rdfs:comment "Attore, regista, sceneggiatore, doppiatore, produttore cinematografico e televisivo statunitense."@it ;
           rdfs:label "TomHanks"@it .
 
@@ -2031,6 +2054,7 @@ owl:Thing rdfs:comment "Most general class"@en .
                                  :MattDamon ;
                 :ha_lavorato_in :TheDeparted ;
                 :sceneggiatore_di :TheDeparted ;
+                :nome "Steven Spielberg"^^xsd:string ;
                 rdfs:comment "Sceneggiatore, regista e romanziere statunitense."@it ;
                 rdfs:label "WilliamMonahan"@it .
 
