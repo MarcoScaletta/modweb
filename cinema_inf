@@ -1,0 +1,1081 @@
+@prefix : <http://www.semanticweb.org/marco/ontologies/2019/11/cinema_inf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/marco/ontologies/2019/11/cinema_inf> .
+
+<http://www.semanticweb.org/marco/ontologies/2019/11/cinema_inf> rdf:type owl:Ontology ;
+                                                                  <http://purl.org/dc/elements/1.1/creator> "Marco Scaletta" ;
+                                                                  <http://purl.org/dc/elements/1.1/date> "2019-12-15T00:00:00"^^xsd:dateTime ;
+                                                                  <http://purl.org/vocab/vann/preferredNamespacePrefix> "ModSem" ;
+                                                                  <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.semanticweb.org/marco/ontologies/2019/11/cinema_inf"^^xsd:anyURI ;
+                                                                  rdfs:comment """Progetto d'esame per il corso di Modellazione Concettuale per il Web Semantico, Laurea Magistrale in Informatica, a.a. 2018/19, Dipartimento di Informati dell'Università degli Studi di Torino.
+
+L'ontologia si propone di modellare il dominio relativo all'ambito cinematografico, permettendo un'analisi delle relazioni tra prodotti cinematografici e persone che vi hanno lavorato, quali attori, registri e sceneggiatori."""@it ;
+                                                                  rdfs:label "Progetto \"Modellazione Concettuale per il Web Semantico\" 2018/1"@it .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://open.vocab.org/terms/defines
+<http://open.vocab.org/terms/defines> rdf:type owl:AnnotationProperty .
+
+
+###  http://open.vocab.org/terms/describes
+<http://open.vocab.org/terms/describes> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements> rdf:type owl:AnnotationProperty ;
+                                                                                          rdfs:comment "This annotation property is used for exemplifying possible requirements the content pattern provides a solution for. Requirements are expressed as natural language competency questions." .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom> rdf:type owl:AnnotationProperty ;
+                                                                                     rdfs:comment "This annotation property should be assigned with a URI, which points to the possible reference ontology which the annotated pattern was extracted from (i.e. the reference ontology that the ontology elements have been deeply or partially cloned by). The range is not explicit in the definition of the annotation property because it would turn the ontology to OWL Full. E.g. The participation pattern is extracted from the Dolce Ultra Lite ontology, hence the value for this annotation property is http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasAuthor
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasAuthor> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences> rdf:type owl:AnnotationProperty ;
+                                                                                       rdfs:comment "This annotation property is used for briefly describing the benefits and/or possible trade-offs when using the CP." .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent> rdf:type owl:AnnotationProperty ;
+                                                                                 rdfs:comment "This annotation property is used in order to describe the intent of the content pattern." .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#reengineeredFrom
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#reengineeredFrom> rdf:type owl:AnnotationProperty ;
+                                                                                        rdfs:comment "This annotation property should be assigned with a URI, which points to the concept schema, page, or anything else from which the annotated pattern was reengineered.  If the source does not have any URI e.g., a printed book, this property value should provide information as precise as possible in order to identify the source. This property is alternative to the extractedFrom property because it is used when the pattern come from a concept schema which is not an owl ontology. For example content ontology design patterns, which are reengineered from data model patterns, rdf schemas, etc. should be annotatd with this property. E.g. The basicpersonalfoaf pattern is extracted from the rdf FOAF specification, hence the value for this annotation property is http://xmlns.com/foaf/spec/20071002.rdf" .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs> rdf:type owl:AnnotationProperty ;
+                                                                                  rdfs:comment "This annotation property can be used to indicate other CPs (if any) that specialize, generalize, inlcude, or are components of the CP. Furthermore, this field may indicate other CPs that are typically used in conjunction with the described one. Important similarities and differences with other patterns can be also described here." .
+
+
+###  http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios> rdf:type owl:AnnotationProperty ;
+                                                                                 rdfs:comment "This annotation property is used for describing examples of instantiation of the Content OP. For example, for the part-of Content OP (which represents part-whole relations) a possible scenario is the sentence: \"the brain is part of the human body\". Scenarios are expressed as natural language sentences." .
+
+
+###  http://www.w3.org/2007/05/powder-s#describedby
+<http://www.w3.org/2007/05/powder-s#describedby> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> rdf:type owl:ObjectProperty ;
+                                                                              owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> ;
+                                                                              rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
+                                                                              rdfs:range owl:Thing ;
+                                                                              rdfs:comment "A relation between collections and entities, e.g. 'my collection of saxophones includes an old Adolphe Sax original alto' (i.e. my collection has member an Adolphe Sax alto)." ,
+                                                                                           "The link to the members of a Set"^^xsd:string ;
+                                                                              rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+                                                                              rdfs:label "has member"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:domain owl:Thing ;
+                                                                               rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
+                                                                               rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+                                                                               rdfs:label "is member of"@en .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#attore_in
+<http://www.semanticweb.org/friday/ontologies/cinema#attore_in> rdf:type owl:ObjectProperty ;
+                                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                owl:inverseOf <http://www.semanticweb.org/friday/ontologies/cinema#ha_attore> ;
+                                                                rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Attore> ;
+                                                                rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                owl:propertyChainAxiom ( <http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast>
+                                                                                         <http://www.semanticweb.org/friday/ontologies/cinema#cast_di>
+                                                                                       ) ;
+                                                                rdfs:comment "Relazione che indica in quale film ha recitato un certo attore"@it ;
+                                                                rdfs:label "attore_in"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#cast_di
+<http://www.semanticweb.org/friday/ontologies/cinema#cast_di> rdf:type owl:ObjectProperty ;
+                                                              owl:inverseOf <http://www.semanticweb.org/friday/ontologies/cinema#ha_cast> ;
+                                                              rdf:type owl:FunctionalProperty ,
+                                                                       owl:InverseFunctionalProperty ;
+                                                              rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Cast> ;
+                                                              rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                              rdfs:comment "Relazione che indica in quale film ha recitato un certo cast"@it ;
+                                                              rdfs:label "cast_di"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro
+<http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> ,
+                                                                                        [ owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf>
+                                                                                        ] ;
+                                                                     owl:inverseOf <http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast> ;
+                                                                     rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Cast> ;
+                                                                     rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Attore> ;
+                                                                     rdfs:comment "Relazione che indica l'appartenenza di un attore a un cast"@it ;
+                                                                     rdfs:label "cast_ha_membro"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_attore
+<http://www.semanticweb.org/friday/ontologies/cinema#ha_attore> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Attore> ;
+                                                                rdfs:comment "Relazione che indica un certo film ha un certo attore"@it ;
+                                                                rdfs:label "ha_attore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_cast
+<http://www.semanticweb.org/friday/ontologies/cinema#ha_cast> rdf:type owl:ObjectProperty ,
+                                                                       owl:FunctionalProperty ,
+                                                                       owl:InverseFunctionalProperty ;
+                                                              rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                              rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Cast> ;
+                                                              rdfs:comment "Relazione che un certo film ha un certo cast"@it ;
+                                                              rdfs:label "ha_cast"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con
+<http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                      owl:inverseOf <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> ;
+                                                                      rdf:type owl:SymmetricProperty ;
+                                                                      rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                                                      rdfs:range <http://xmlns.com/foaf/0.1/Person> ;
+                                                                      rdfs:comment "Relazione che indica con quale persona ha lavorato una certa persona"@it ;
+                                                                      rdfs:label "ha_lavorato_con"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in
+<http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                                                     rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                     rdfs:comment "Relazione che indica in quale opera cinematografica ha lavorato una certa persona"@it ;
+                                                                     rdfs:label "ha_lavorato_in"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_regista
+<http://www.semanticweb.org/friday/ontologies/cinema#ha_regista> rdf:type owl:ObjectProperty ;
+                                                                 owl:inverseOf <http://www.semanticweb.org/friday/ontologies/cinema#regista_di> ;
+                                                                 rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                 rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Regista> ;
+                                                                 rdfs:comment "Relazione che indica quale regista abbia diretto un certo film"@it ;
+                                                                 rdfs:label "ha_regista"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_sceneggiatore
+<http://www.semanticweb.org/friday/ontologies/cinema#ha_sceneggiatore> rdf:type owl:ObjectProperty ;
+                                                                       owl:inverseOf <http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di> ;
+                                                                       rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                       rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore> ;
+                                                                       rdfs:comment "Relazione che indica quale sceneggiatore abbia scritto un certo film"@it ;
+                                                                       rdfs:label "ha_sceneggiatore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_sottoinsieme
+<http://www.semanticweb.org/friday/ontologies/cinema#ha_sottoinsieme> rdf:type owl:ObjectProperty ;
+                                                                      owl:inverseOf <http://www.semanticweb.org/friday/ontologies/cinema#sottoinsieme_di> ;
+                                                                      rdf:type owl:TransitiveProperty ;
+                                                                      rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ;
+                                                                      rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ;
+                                                                      rdfs:comment "Relazione che indica che un set ha un certo sottoinsieme"@it ;
+                                                                      rdfs:label "ha_sottoinsieme"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast
+<http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> ,
+                                                                                        [ owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember>
+                                                                                        ] ;
+                                                                     rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Attore> ;
+                                                                     rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Cast> ;
+                                                                     rdfs:comment "Relazione che indica a quale cast appartiene un certo attore"@it ;
+                                                                     rdfs:label "membro_di_cast"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#regista_di
+<http://www.semanticweb.org/friday/ontologies/cinema#regista_di> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                 rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Regista> ;
+                                                                 rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                 rdfs:comment "Relazione che indica in quale film sia stato diretto da un certo regista"@it ;
+                                                                 rdfs:label "regista_di"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di
+<http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                       rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore> ;
+                                                                       rdfs:range <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                       <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom> "sceneggiatore_di"@it ;
+                                                                       rdfs:comment "Relazione che indica quale film sia stato scritto da un certo sceneggiatore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#sottoinsieme_di
+<http://www.semanticweb.org/friday/ontologies/cinema#sottoinsieme_di> rdf:type owl:ObjectProperty ,
+                                                                               owl:TransitiveProperty ;
+                                                                      rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ;
+                                                                      rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ;
+                                                                      rdfs:comment "Relazione che indica a quale insieme appartiene un certo set"@it ;
+                                                                      rdfs:label "sottoinsieme_di"@it .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:ObjectProperty ;
+                      owl:inverseOf owl:topObjectProperty ;
+                      rdf:type owl:SymmetricProperty ,
+                               owl:TransitiveProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/terms/alternative
+<http://purl.org/dc/terms/alternative> rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/terms/title> .
+
+
+###  http://purl.org/dc/terms/available
+<http://purl.org/dc/terms/available> rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/dateAccepted
+<http://purl.org/dc/terms/dateAccepted> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
+
+
+###  http://purl.org/dc/terms/dateCopyrighted
+<http://purl.org/dc/terms/dateCopyrighted> rdf:type owl:DatatypeProperty ;
+                                           rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
+
+
+###  http://purl.org/dc/terms/dateSubmitted
+<http://purl.org/dc/terms/dateSubmitted> rdf:type owl:DatatypeProperty ;
+                                         rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/valid
+<http://purl.org/dc/terms/valid> rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf <http://purl.org/dc/terms/date> .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#anno_di_uscita
+<http://www.semanticweb.org/friday/ontologies/cinema#anno_di_uscita> rdf:type owl:DatatypeProperty ;
+                                                                     rdfs:domain <http://dbpedia.org/ontology/Film> ,
+                                                                                 <http://dbpedia.org/ontology/Work> ,
+                                                                                 <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                     rdfs:range xsd:nonNegativeInteger ;
+                                                                     rdfs:comment "Anno di uscita di un film"@it ;
+                                                                     rdfs:label "anno_di_uscita"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ha_durata
+<http://www.semanticweb.org/friday/ontologies/cinema#ha_durata> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:domain <http://dbpedia.org/ontology/Film> ,
+                                                                            <http://dbpedia.org/ontology/Work> ,
+                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                rdfs:range xsd:nonNegativeInteger ;
+                                                                rdfs:comment "Durata di un film"@it ;
+                                                                rdfs:label "ha_durata"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#nome
+<http://www.semanticweb.org/friday/ontologies/cinema#nome> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                                           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#titolo
+<http://www.semanticweb.org/friday/ontologies/cinema#titolo> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:domain <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                             rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/Film
+<http://dbpedia.org/ontology/Film> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://dbpedia.org/ontology/Work> ;
+                                   rdfs:isDefinedBy <http://dbpedia.org/ontology/> ;
+                                   rdfs:label "Film"@de ,
+                                              "film"@fr ,
+                                              "film"@nl ,
+                                              "film"@pl ,
+                                              "movie"@en ,
+                                              "película"@es ,
+                                              "scannán"@ga ,
+                                              "ταινία"@el ,
+                                              "فيلم"@ar ,
+                                              "映画"@ja ,
+                                              "영화"@ko ;
+                                   <http://www.w3.org/2007/05/powder-s#describedby> <http://dbpedia.org/ontology/data/definitions.ttl> ;
+                                   <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyClass:Film> .
+
+
+###  http://dbpedia.org/ontology/Work
+<http://dbpedia.org/ontology/Work> rdf:type owl:Class ;
+                                   rdfs:comment "Class that defines a artificial creation"@en ;
+                                   rdfs:label "work"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> rdf:type owl:Class ;
+                                                                               rdfs:comment "Any container for entities that share one or more common properties. E.g. \"stone objects\", \"the nurses\", \"the Louvre Aegyptian collection\". A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one." ;
+                                                                               rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+                                                                               rdfs:label "Collection"@en .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set
+<http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
+                                                           rdfs:comment "Set - A collection that cannot contain duplicate elements."^^xsd:string ;
+                                                           rdfs:label "set"^^xsd:string .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Attore
+<http://www.semanticweb.org/friday/ontologies/cinema#Attore> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+                                                             rdfs:comment "Persona che ha recitato in un film"@it ;
+                                                             rdfs:label "Attore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Autore
+<http://www.semanticweb.org/friday/ontologies/cinema#Autore> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+                                                             rdfs:comment "Autore di un film"@it ;
+                                                             rdfs:label "Autore"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Cast
+<http://www.semanticweb.org/friday/ontologies/cinema#Cast> rdf:type owl:Class ;
+                                                           owl:equivalentClass [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> ;
+                                                                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                      ]
+                                                                                                    ) ;
+                                                                                 rdf:type owl:Class
+                                                                               ] ;
+                                                           rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                                                                           <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                                                                           [ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> ;
+                                                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                  ]
+                                                                                                ) ;
+                                                                             rdf:type owl:Class
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> ;
+                                                                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                           ] ;
+                                                           rdfs:comment "Definisce un insieme di attori"@it ;
+                                                           rdfs:label "Cast"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Film
+<http://www.semanticweb.org/friday/ontologies/cinema#Film> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://dbpedia.org/ontology/Film> ;
+                                                           rdfs:comment "Classe che definisce il film come opera cinematografica alla quale creazione partecipano attori, registri e sceneggiatori"@it ;
+                                                           rdfs:label "Film"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#FilmItaliano
+<http://www.semanticweb.org/friday/ontologies/cinema#FilmItaliano> rdf:type owl:Class ;
+                                                                   owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                         owl:oneOf ( <http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella>
+                                                                                                   )
+                                                                                       ] ;
+                                                                   rdfs:subClassOf <http://www.semanticweb.org/friday/ontologies/cinema#Film> .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Regista
+<http://www.semanticweb.org/friday/ontologies/cinema#Regista> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.semanticweb.org/friday/ontologies/cinema#Autore> ,
+                                                                              <http://xmlns.com/foaf/0.1/Person> ;
+                                                              rdfs:comment "Regista di un film"@it ;
+                                                              rdfs:label "Regista"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore
+<http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/friday/ontologies/cinema#Autore> ;
+                                                                    rdfs:comment "Sceneggiatore di un film"@it ;
+                                                                    rdfs:label "Sceneggiatore"@it .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:comment "Most general class"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:comment "Equivalent to an uman being"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#CastLaVitaÈBella
+<http://www.semanticweb.org/friday/ontologies/cinema#CastLaVitaÈBella> rdf:type owl:NamedIndividual ,
+                                                                                <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                                                                                <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                                                                                <http://www.semanticweb.org/friday/ontologies/cinema#Cast> ;
+                                                                       <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> <http://www.semanticweb.org/friday/ontologies/cinema#RobertoBenigni> ;
+                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#cast_di> <http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella> ;
+                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> <http://www.semanticweb.org/friday/ontologies/cinema#RobertoBenigni> ;
+                                                                       rdfs:comment "Cast del film \"La vita è bella\""@it ;
+                                                                       rdfs:label "CastLaVitaÈBella"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#CastProvaAPrendermi
+<http://www.semanticweb.org/friday/ontologies/cinema#CastProvaAPrendermi> rdf:type owl:NamedIndividual ,
+                                                                                   <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                                                                                   <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                                                                                   <http://www.semanticweb.org/friday/ontologies/cinema#Cast> ;
+                                                                          <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                                        <http://www.semanticweb.org/friday/ontologies/cinema#TomHanks> ;
+                                                                          <http://www.semanticweb.org/friday/ontologies/cinema#cast_di> <http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> ;
+                                                                          <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                               <http://www.semanticweb.org/friday/ontologies/cinema#TomHanks> ;
+                                                                          rdfs:comment "Cast del film \"Prova a prendermi\""@it ;
+                                                                          rdfs:label "CastProvaAPrendermi"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#CastShutterIsland
+<http://www.semanticweb.org/friday/ontologies/cinema#CastShutterIsland> rdf:type owl:NamedIndividual ,
+                                                                                 <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                                                                                 <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                                                                                 <http://www.semanticweb.org/friday/ontologies/cinema#Cast> ;
+                                                                        <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo> ;
+                                                                        <http://www.semanticweb.org/friday/ontologies/cinema#cast_di> <http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> ;
+                                                                        <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo> ;
+                                                                        rdfs:comment "Cast del film \"Shutter Island\""@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#Cast_TheDeparted
+<http://www.semanticweb.org/friday/ontologies/cinema#Cast_TheDeparted> rdf:type owl:NamedIndividual ,
+                                                                                <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ,
+                                                                                <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set> ,
+                                                                                <http://www.semanticweb.org/friday/ontologies/cinema#Cast> ;
+                                                                       <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#MattDamon> ;
+                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#cast_di> <http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> ;
+                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#MattDamon> ;
+                                                                       rdfs:comment "Cast del film \"The Departed\""@it ;
+                                                                       rdfs:label "CastTheDeparted"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#JeffNathanson
+<http://www.semanticweb.org/friday/ontologies/cinema#JeffNathanson> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#Autore> ,
+                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore> ,
+                                                                             <http://xmlns.com/foaf/0.1/Person> ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                          <http://www.semanticweb.org/friday/ontologies/cinema#StevenSpielberg> ,
+                                                                                                                                          <http://www.semanticweb.org/friday/ontologies/cinema#TomHanks> ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di> <http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Jeff Nathanson"^^xsd:string ;
+                                                                    rdfs:comment "Sceneggiatore, regista e produttore cinematografico statunitense."@it ;
+                                                                    rdfs:label "JeffNathanson"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella
+<http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella> rdf:type owl:NamedIndividual ,
+                                                                            <http://dbpedia.org/ontology/Film> ,
+                                                                            <http://dbpedia.org/ontology/Work> ,
+                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#Film> ,
+                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#FilmItaliano> ;
+                                                                   <http://www.semanticweb.org/friday/ontologies/cinema#ha_attore> <http://www.semanticweb.org/friday/ontologies/cinema#RobertoBenigni> ;
+                                                                   <http://www.semanticweb.org/friday/ontologies/cinema#ha_cast> <http://www.semanticweb.org/friday/ontologies/cinema#CastLaVitaÈBella> ;
+                                                                   <http://www.semanticweb.org/friday/ontologies/cinema#ha_regista> <http://www.semanticweb.org/friday/ontologies/cinema#RobertoBenigni> ;
+                                                                   <http://www.semanticweb.org/friday/ontologies/cinema#ha_sceneggiatore> <http://www.semanticweb.org/friday/ontologies/cinema#RobertoBenigni> ,
+                                                                                                                                          <http://www.semanticweb.org/friday/ontologies/cinema#VincenzoCerami> ;
+                                                                   <http://www.semanticweb.org/friday/ontologies/cinema#anno_di_uscita> "1997"^^xsd:nonNegativeInteger ;
+                                                                   <http://www.semanticweb.org/friday/ontologies/cinema#ha_durata> "124"^^xsd:nonNegativeInteger ;
+                                                                   <http://www.semanticweb.org/friday/ontologies/cinema#titolo> "La vita è bella"^^xsd:string ;
+                                                                   rdfs:comment "Film del 1997 diretto e interpretato da Roberto Benigni"@it ;
+                                                                   rdfs:label "LaVitaÈBella"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#LaetaKalogridis
+<http://www.semanticweb.org/friday/ontologies/cinema#LaetaKalogridis> rdf:type owl:NamedIndividual ,
+                                                                               <http://www.semanticweb.org/friday/ontologies/cinema#Autore> ,
+                                                                               <http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore> ,
+                                                                               <http://xmlns.com/foaf/0.1/Person> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo> ,
+                                                                                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di> <http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Laeta Kalogridis"^^xsd:string ;
+                                                                      rdfs:comment "Sceneggiatrice e produttrice cinematografica statunitense di origini greche."@it ;
+                                                                      rdfs:label "LaetaKalogridis"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio
+<http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> rdf:type owl:NamedIndividual ,
+                                                                                <http://www.semanticweb.org/friday/ontologies/cinema#Attore> ,
+                                                                                <http://xmlns.com/foaf/0.1/Person> ;
+                                                                       <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> <http://www.semanticweb.org/friday/ontologies/cinema#CastProvaAPrendermi> ,
+                                                                                                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#CastShutterIsland> ,
+                                                                                                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#Cast_TheDeparted> ;
+                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#attore_in> <http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> ,
+                                                                                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> ,
+                                                                                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> ;
+                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#JeffNathanson> ,
+                                                                                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#LaetaKalogridis> ,
+                                                                                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo> ,
+                                                                                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese> ,
+                                                                                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#MattDamon> ,
+                                                                                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#StevenSpielberg> ,
+                                                                                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#TomHanks> ,
+                                                                                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#WilliamMonahan> ;
+                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> ,
+                                                                                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> ,
+                                                                                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> ;
+                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast> <http://www.semanticweb.org/friday/ontologies/cinema#CastProvaAPrendermi> ,
+                                                                                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#CastShutterIsland> ,
+                                                                                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#Cast_TheDeparted> ;
+                                                                       <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Leonardo Di Caprio"^^xsd:string ;
+                                                                       rdfs:comment "Attore, produttore cinematografico e attivista statunitense di origini italiane."@it ;
+                                                                       rdfs:label "LeonardoDiCaprio"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo
+<http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.semanticweb.org/friday/ontologies/cinema#Attore> ,
+                                                                           <http://xmlns.com/foaf/0.1/Person> ;
+                                                                  <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> <http://www.semanticweb.org/friday/ontologies/cinema#CastShutterIsland> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#attore_in> <http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#LaetaKalogridis> ,
+                                                                                                                                        <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                        <http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast> <http://www.semanticweb.org/friday/ontologies/cinema#CastShutterIsland> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Mark Ruffalo"^^xsd:string ;
+                                                                  rdfs:comment "Attore, regista, produttore cinematografico e sceneggiatore statunitense."@it ;
+                                                                  rdfs:label "MarkRuffalo"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese
+<http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Autore> ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Regista> ,
+                                                                              <http://xmlns.com/foaf/0.1/Person> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#LaetaKalogridis> ,
+                                                                                                                                           <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                           <http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo> ,
+                                                                                                                                           <http://www.semanticweb.org/friday/ontologies/cinema#MattDamon> ,
+                                                                                                                                           <http://www.semanticweb.org/friday/ontologies/cinema#WilliamMonahan> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> ,
+                                                                                                                                          <http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#regista_di> <http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> ,
+                                                                                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Martin Scorsese"^^xsd:string ;
+                                                                     rdfs:comment "Regista, sceneggiatore e produttore cinematografico statunitense con cittadinanza italiana."@it ;
+                                                                     rdfs:label "MartinScorsese"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#MattDamon
+<http://www.semanticweb.org/friday/ontologies/cinema#MattDamon> rdf:type owl:NamedIndividual ,
+                                                                         <http://www.semanticweb.org/friday/ontologies/cinema#Attore> ,
+                                                                         <http://xmlns.com/foaf/0.1/Person> ;
+                                                                <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> <http://www.semanticweb.org/friday/ontologies/cinema#Cast_TheDeparted> ;
+                                                                <http://www.semanticweb.org/friday/ontologies/cinema#attore_in> <http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> ;
+                                                                <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese> ,
+                                                                                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#WilliamMonahan> ;
+                                                                <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> ;
+                                                                <http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast> <http://www.semanticweb.org/friday/ontologies/cinema#Cast_TheDeparted> ;
+                                                                <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Matt Damon"^^xsd:string ;
+                                                                rdfs:comment "Attore, sceneggiatore, doppiatore e produttore cinematografico statunitense."@it ;
+                                                                rdfs:label "MattDamon"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi
+<http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> rdf:type owl:NamedIndividual ,
+                                                                               <http://dbpedia.org/ontology/Film> ,
+                                                                               <http://dbpedia.org/ontology/Work> ,
+                                                                               <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#ha_attore> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#TomHanks> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#ha_cast> <http://www.semanticweb.org/friday/ontologies/cinema#CastProvaAPrendermi> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#ha_regista> <http://www.semanticweb.org/friday/ontologies/cinema#StevenSpielberg> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#ha_sceneggiatore> <http://www.semanticweb.org/friday/ontologies/cinema#JeffNathanson> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#anno_di_uscita> "2002"^^xsd:nonNegativeInteger ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#ha_durata> "141"^^xsd:nonNegativeInteger ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#titolo> "Prova a prendermi"^^xsd:string ;
+                                                                      rdfs:comment "Film del 2002 diretto da Steven Spielberg, adattamento del romanzo autobiografico Catch Me if You Can di Frank Abagnale Jr."@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#RobertoBenigni
+<http://www.semanticweb.org/friday/ontologies/cinema#RobertoBenigni> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Attore> ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Autore> ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Regista> ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore> ,
+                                                                              <http://xmlns.com/foaf/0.1/Person> ;
+                                                                     <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> <http://www.semanticweb.org/friday/ontologies/cinema#CastLaVitaÈBella> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#attore_in> <http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#VincenzoCerami> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast> <http://www.semanticweb.org/friday/ontologies/cinema#CastLaVitaÈBella> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#regista_di> <http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di> <http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Roberto Benigni" ;
+                                                                     rdfs:comment "Attore, comico, regista e sceneggiatore italiano."@it ;
+                                                                     rdfs:label "RobertoBenigni"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland
+<http://www.semanticweb.org/friday/ontologies/cinema#ShutterIsland> rdf:type owl:NamedIndividual ,
+                                                                             <http://dbpedia.org/ontology/Film> ,
+                                                                             <http://dbpedia.org/ontology/Work> ,
+                                                                             <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#ha_attore> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo> ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#ha_cast> <http://www.semanticweb.org/friday/ontologies/cinema#CastShutterIsland> ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#ha_regista> <http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese> ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#ha_sceneggiatore> <http://www.semanticweb.org/friday/ontologies/cinema#LaetaKalogridis> ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#anno_di_uscita> "2010"^^xsd:nonNegativeInteger ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#ha_durata> "138"^^xsd:nonNegativeInteger ;
+                                                                    <http://www.semanticweb.org/friday/ontologies/cinema#titolo> "Shutter Island"^^xsd:string ;
+                                                                    rdfs:comment "Film del 2010 diretto da Martin Scorsese."@it ;
+                                                                    rdfs:label "ShutterIsland"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#StevenSpielberg
+<http://www.semanticweb.org/friday/ontologies/cinema#StevenSpielberg> rdf:type owl:NamedIndividual ,
+                                                                               <http://www.semanticweb.org/friday/ontologies/cinema#Autore> ,
+                                                                               <http://www.semanticweb.org/friday/ontologies/cinema#Regista> ,
+                                                                               <http://xmlns.com/foaf/0.1/Person> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#JeffNathanson> ,
+                                                                                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                            <http://www.semanticweb.org/friday/ontologies/cinema#TomHanks> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#regista_di> <http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> ;
+                                                                      <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Steven Spielberg"^^xsd:string ;
+                                                                      rdfs:comment "Regista, sceneggiatore, produttore cinematografico e produttore televisivo statunitense."@it ;
+                                                                      rdfs:label "StevenSpielberg"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted
+<http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> rdf:type owl:NamedIndividual ,
+                                                                           <http://dbpedia.org/ontology/Film> ,
+                                                                           <http://dbpedia.org/ontology/Work> ,
+                                                                           <http://www.semanticweb.org/friday/ontologies/cinema#Film> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#ha_attore> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#MattDamon> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#ha_cast> <http://www.semanticweb.org/friday/ontologies/cinema#Cast_TheDeparted> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#ha_regista> <http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#ha_sceneggiatore> <http://www.semanticweb.org/friday/ontologies/cinema#WilliamMonahan> ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#anno_di_uscita> "2006"^^xsd:nonNegativeInteger ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#ha_durata> "151"^^xsd:nonNegativeInteger ;
+                                                                  <http://www.semanticweb.org/friday/ontologies/cinema#titolo> "The Departed"^^xsd:string ;
+                                                                  rdfs:comment "Film del 2006 diretto da Martin Scorsese."@it ;
+                                                                  rdfs:label "TheDeparted"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#TomHanks
+<http://www.semanticweb.org/friday/ontologies/cinema#TomHanks> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.semanticweb.org/friday/ontologies/cinema#Attore> ,
+                                                                        <http://xmlns.com/foaf/0.1/Person> ;
+                                                               <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf> <http://www.semanticweb.org/friday/ontologies/cinema#CastProvaAPrendermi> ;
+                                                               <http://www.semanticweb.org/friday/ontologies/cinema#attore_in> <http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> ;
+                                                               <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#JeffNathanson> ,
+                                                                                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#StevenSpielberg> ;
+                                                               <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#ProvaAPrendermi> ;
+                                                               <http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast> <http://www.semanticweb.org/friday/ontologies/cinema#CastProvaAPrendermi> ;
+                                                               <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Tom Hanks"^^xsd:string ;
+                                                               rdfs:comment "Attore, regista, sceneggiatore, doppiatore, produttore cinematografico e televisivo statunitense."@it ;
+                                                               rdfs:label "TomHanks"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#VincenzoCerami
+<http://www.semanticweb.org/friday/ontologies/cinema#VincenzoCerami> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Autore> ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore> ,
+                                                                              <http://xmlns.com/foaf/0.1/Person> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#RobertoBenigni> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di> <http://www.semanticweb.org/friday/ontologies/cinema#LaVitaÈBella> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#nome> "Vincenzo Cerami"^^xsd:string ;
+                                                                     rdfs:comment "Scrittore, giornalista, sceneggiatore, saggista, drammaturgo e poeta italiano."@it ;
+                                                                     rdfs:label "VincenzoCerami"@it .
+
+
+###  http://www.semanticweb.org/friday/ontologies/cinema#WilliamMonahan
+<http://www.semanticweb.org/friday/ontologies/cinema#WilliamMonahan> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Autore> ,
+                                                                              <http://www.semanticweb.org/friday/ontologies/cinema#Sceneggiatore> ,
+                                                                              <http://xmlns.com/foaf/0.1/Person> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio> ,
+                                                                                                                                           <http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese> ,
+                                                                                                                                           <http://www.semanticweb.org/friday/ontologies/cinema#MattDamon> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> <http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di> <http://www.semanticweb.org/friday/ontologies/cinema#TheDeparted> ;
+                                                                     <http://www.semanticweb.org/friday/ontologies/cinema#nome> "William Monahan"^^xsd:string ;
+                                                                     rdfs:comment "Sceneggiatore, regista e romanziere statunitense."@it ;
+                                                                     rdfs:label "WilliamMonahan"@it .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://dbpedia.org/ontology/> <http://open.vocab.org/terms/defines> <http://dbpedia.org/ontology/Film> .
+
+
+<http://dbpedia.org/ontology/data/definitions.ttl> <http://open.vocab.org/terms/describes> <http://dbpedia.org/ontology/Film> .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasComponent> rdfs:comment "This annotation property is useful for content ontology design patterns. Its value is a URI, which refers to another content ontology design pattern which is a component of the annotated one." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasUnitTest> rdfs:comment "This property can be used to annotate a unit test (e.g. in the form of a SPARQL query) to be launched to evaluate an ontology against a requirement-based task." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf> rdfs:comment "This annotation property is used for referring a cloned ontology entity to its cloning source." .
+
+
+<http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isSpecializationOf> rdfs:comment "This annotation property is useful for content ontology design patterns and its elements. Its value is a URI, which refers either to a content ontology design pattern that is specialized by the annotated one, or to an ontology element that is specialized by the annotated one." .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection>
+] .
+
+
+[ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+] .
+
+
+[ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf <http://www.semanticweb.org/friday/ontologies/cinema#Cast>
+] .
+
+
+[ owl:intersectionOf ( <http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set>
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#cast_ha_membro> ;
+                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                  ]
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#ha_durata> ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:minInclusive "60"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Film>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#ha_durata> ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:minInclusive "60"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Work>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#ha_durata> ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:maxInclusive "30"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Film>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://www.semanticweb.org/friday/ontologies/cinema#ha_durata> ;
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onDataRange [ rdf:type rdfs:Datatype ;
+                    owl:onDatatype xsd:nonNegativeInteger ;
+                    owl:withRestrictions ( [ xsd:maxInclusive "30"^^xsd:nonNegativeInteger
+                                           ]
+                                         )
+                  ] ;
+  rdfs:subClassOf <http://dbpedia.org/ontology/Work>
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.semanticweb.org/friday/ontologies/cinema#JeffNathanson>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#LaetaKalogridis>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#LeonardoDiCaprio>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#MarkRuffalo>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#MartinScorsese>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#MattDamon>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#RobertoBenigni>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#StevenSpielberg>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#TomHanks>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#VincenzoCerami>
+                        <http://www.semanticweb.org/friday/ontologies/cinema#WilliamMonahan>
+                      )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<http://www.semanticweb.org/friday/ontologies/cinema#person> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/friday/ontologies/cinema#film> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/friday/ontologies/cinema#actor> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/friday/ontologies/cinema#cast> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/friday/ontologies/cinema#person1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/friday/ontologies/cinema#person2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Aggiunge la relazione ha_lavorato_in per l'attore  in modo che la regola HaLavoratoCon restituisca i risultati voluti"^^xsd:string ;
+   rdfs:label "AttoreHaLavoratoIn"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#attore_in> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Aggiunge la relazione ha_lavorato_in per un attore appartenente a un cast in modo che la regola HaLavoratoCon restituisca i risultati voluti"^^xsd:string ;
+   rdfs:label "AttoreMembroDiCastHaLavoratoIn"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#membro_di_cast> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#actor> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#cast>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#cast_di> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#cast> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#actor> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che permette di inferire con quale persone abbia lavorato una certa persona (supplisce la problema di fare tale inferenza con le property chain)"^^xsd:string ;
+   rdfs:label "HaLavoratoCon"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#person2>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person1> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person2> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_con> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#person2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Aggiunge la relazione ha_lavorato_in per il regista in modo che la regola HaLavoratoCon restituisca i risultati voluti"^^xsd:string ;
+   rdfs:label "RegistaHaLavoratoIn"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#regista_di> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Aggiunge la relazione ha_lavorato_in per gli sceneggiatori in modo che la regola HaLavoratoCon restituisca i risultati voluti"^^xsd:string ;
+   rdfs:label "SceneggiatoreHaLavoratoIn"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#sceneggiatore_di> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/friday/ontologies/cinema#ha_lavorato_in> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/friday/ontologies/cinema#person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/friday/ontologies/cinema#film>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
